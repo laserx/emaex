@@ -3,7 +3,7 @@ defmodule Emaex do
     calculate for ema.
   """
 
-	@type t :: %Emaex{times: integer, v: [float]}
+  @type t :: %Emaex{times: integer, v: [float]}
   defstruct times: 0, v: []
 
   @spec calc([number()], any()) :: {:error, :empty} | {:ok, Emaex.t()}
