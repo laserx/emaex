@@ -9,6 +9,8 @@ defmodule Emaex do
   @spec calc([number()], any()) :: {:error, :empty} | {:ok, Emaex.t()}
   def calc(data, times), do: run(data, times)
 
+  def calc(close, pre, times), do: (2 * close + (times - 1) * pre) / (times + 1)
+
   defp run(data, times, resp \\ [])
   defp run([], _times, []), do: {:error, :empty}
   defp run([], times, resp), do: {:ok, %Emaex{times: times, v: resp}}
